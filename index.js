@@ -1,12 +1,9 @@
-function toPower(number, exp) {
-    if(exp === 1) {
-        return number;
-    }
-    else if(exp > 1) {
-        return number * toPower(number, exp - 1);
-    }
+let counter = 0;
 
-    else if(exp < 1 && exp !== 0) { // negative numbers
-        return 1/(number * toPower(number, (exp * -1) - 1));
-    }
+function clickHandler() {
+    alert(`На кнопку нажали. Количество нажатий: ${++counter}`);
 }
+
+const [button] = document.getElementsByTagName('button');
+
+button.addEventListener('click', clickHandler);
