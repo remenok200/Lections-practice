@@ -1,12 +1,12 @@
-const ans = prompt('Выберите язык, RU, UA или EN');
+const arr = [];
 
-const greetings = new Map();
-greetings.set('RU', 'Привет');
-greetings.set('UA', 'Витаю');
-greetings.set('EN', 'Hello');
+func(prompt('Сколько раз вызываем функцию?'));
 
-if(greetings.has(ans)) {
-  alert(greetings.get(ans));
-} else {
-  alert(greetings.get('EN'));
+function func(count) {
+  if(count > 0) {
+  arr.push(prompt(`Какую строку Вы хотите докинуть в массив? Осталось ${count - 1} раз.`));
+  func(count - 1);
+  }
 }
+
+console.log(arr);
