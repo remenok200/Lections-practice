@@ -1,12 +1,12 @@
-const messBtn = document.querySelector('#messBtn');
-const body = document.querySelector('body');
+const ans = prompt('Выберите язык, RU, UA или EN');
 
-messBtn.addEventListener('click', addMessage);
+const greetings = new Map();
+greetings.set('RU', 'Привет');
+greetings.set('UA', 'Витаю');
+greetings.set('EN', 'Hello');
 
-function addMessage() {
-    const message = document.createElement('p');
-    message.style.color = 'blue';
-    message.style.fontSize = '20px';
-    message.textContent = prompt('Введите сообщение:');
-    body.append(message);
+if(greetings.has(ans)) {
+  alert(greetings.get(ans));
+} else {
+  alert(greetings.get('EN'));
 }
