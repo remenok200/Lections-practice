@@ -1,12 +1,11 @@
-const arr = [];
+/*
+Вывести название кнопки с помощью события слушателя
+*/
 
-func(prompt('Сколько раз вызываем функцию?'));
+const btn = document.querySelector("#messBtn");
 
-function func(count) {
-  if(count > 0) {
-  arr.push(prompt(`Какую строку Вы хотите докинуть в массив? Осталось ${count - 1} раз.`));
-  func(count - 1);
-  }
-}
+const listener = (e) => {
+  console.log(e.target.innerText);
+};
 
-console.log(arr);
+btn.addEventListener("click", listener);
