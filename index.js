@@ -1,11 +1,20 @@
+'use strict';
+
 /*
-Вывести название кнопки с помощью события слушателя
+Даны 2 кнопки
+При наведении на кнопку нужно поменять текст на текст с другой кнопки
 */
 
-const btn = document.querySelector("#messBtn");
+const btnOpen = document.querySelector("#btnOpen");
+const btnClose = document.querySelector("#btnClose");
 
 const listener = (e) => {
-  console.log(e.target.innerText);
+  if(btnOpen.innerText !== btnClose.innerText) {
+    let temp = btnOpen.innerText;
+    btnOpen.innerText = btnClose.innerText;
+    btnClose.innerText = temp;
+  }
 };
 
-btn.addEventListener("click", listener);
+btnClose.addEventListener("mouseover", listener);
+btnOpen.addEventListener("mouseover", listener);
