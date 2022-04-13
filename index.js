@@ -1,18 +1,12 @@
-const todoState = [];
-
-const form = document.querySelector('#addTask');
-const taskList = document.querySelector('#taskList');
-
-function listener(e) {
-  e.preventDefault();
+function interval(start, end, time) {
+  let i = start;
   
-  todoState.push(form.elements.task.value);
-  
-  const message = document.createElement('li');
-  message.textContent = form.elements.task.value;
-  taskList.append(message);
-
-  form.reset();
+  const timeoutID = setInterval(() => {
+    console.log(i++);
+    if (i > end) {
+      clearInterval(timeoutID);
+    }
+  }, time);
 }
 
-form.addEventListener('submit', listener);
+interval(1, 20, 100);
