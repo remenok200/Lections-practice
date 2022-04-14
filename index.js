@@ -1,12 +1,11 @@
-function interval(start, end, time) {
-  let i = start;
-  
-  const timeoutID = setInterval(() => {
-    console.log(i++);
-    if (i > end) {
-      clearInterval(timeoutID);
-    }
-  }, time);
+const myDog = {
+  name: 'Tyzik',
+  age: 3.2,
+  sex: 'man'
 }
 
-interval(1, 20, 100);
+const serializedDog = JSON.stringify(myDog);
+console.log(serializedDog);
+
+const deserializedDog = JSON.parse(serializedDog);
+console.log(deserializedDog);
