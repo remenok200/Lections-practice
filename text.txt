@@ -1,0 +1,6 @@
+.*
+!.gitignore
+asdajsk
+dsfsdf
+sdfsdfsdf12345
+здесь будет eof
